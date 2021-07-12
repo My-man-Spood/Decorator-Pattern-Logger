@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DecoratorLogger.Decorators;
 
 namespace DecoratorLogger
@@ -13,6 +13,9 @@ namespace DecoratorLogger
             logger = new SeverityInfoLogger(logger);
             logger = new TimeStampLogger(logger);
             logger = new SeverityBumperLogger(logger);
+
+            Console.WriteLine("Start typing: ");
+            Console.WriteLine("");
 
             while (true)
             {
