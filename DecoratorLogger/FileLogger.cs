@@ -4,16 +4,21 @@ namespace DecoratorLogger
 {
     public class FileLogger : ILogger
     {
-        private string path;
+        public string Path { get; private set; }
 
         public FileLogger(string path)
         {
-            this.path = path;
+            Path = $"{path}\\log.txt";
+
+            if (File.Exists(Path))
+            {
+                File.WriteAllText(Path, "");
+            }
         }
 
         public void Log(Severity severity, string message)
         {
-            File.AppendAllText($"{path}/log.txt", message);
+            File.AppendAllText(Path, message);
         }
     }
 }

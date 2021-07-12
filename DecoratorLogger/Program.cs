@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using DecoratorLogger.Decorators;
 
 namespace DecoratorLogger
 {
@@ -7,6 +8,9 @@ namespace DecoratorLogger
         static void Main(string[] args)
         {
             ILogger logger = new FileLogger(AppDomain.CurrentDomain.BaseDirectory);
+
+            Console.WriteLine("Start typing: ");
+            Console.WriteLine("");
 
             while (true)
             {
