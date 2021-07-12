@@ -1,4 +1,5 @@
 ﻿using System;
+using DecoratorLogger.Decorators;
 
 namespace DecoratorLogger
 {
@@ -7,6 +8,11 @@ namespace DecoratorLogger
         static void Main(string[] args)
         {
             ILogger logger = new FileLogger(AppDomain.CurrentDomain.BaseDirectory);
+            logger = new ConsoleLogger(logger);
+            logger = new NewLineLogger(logger);
+            logger = new SeverityInfoLogger(logger);
+            logger = new TimeStampLogger(logger);
+            logger = new SeverityBumperLogger(logger);
 
             while (true)
             {
