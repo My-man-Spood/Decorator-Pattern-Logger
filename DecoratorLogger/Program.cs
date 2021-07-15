@@ -1,5 +1,4 @@
 using System;
-using DecoratorLogger.Decorators;
 
 namespace DecoratorLogger
 {
